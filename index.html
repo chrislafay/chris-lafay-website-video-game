@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Lafay - Web Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <img src="images/face.png" alt="Chris Lafay's face" class="header-face">
+            <div class="header-title">
+                <img src="images/chris-lafay.svg" alt="Chris Lafay" class="header-name">
+                <p class="header-subtitle">WEB DESIGNER</p>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="images/coin.svg" alt="Coin" class="coin-icon">
+            <span class="coin-quantity">x6</span>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li class="nav-item active">
+                <a href="#projects">
+                    <img src="images/sword.svg" alt="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#blog">
+                    <img src="images/bulb.svg" alt="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact">
+                    <img src="images/envelope.svg" alt="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="hero-section">
+        <div class="sky">
+            <div class="sky-overlay"></div>
+            <img src="images/Cloud-1.svg" class="cloud cloud-1" alt="Cloud">
+            <img src="images/Cloud-2.svg" class="cloud cloud-2" alt="Cloud">
+            <img src="images/Cloud-3.svg" class="cloud cloud-3" alt="Cloud">
+            <img src="images/Cloud-4.svg" class="cloud cloud-4" alt="Cloud">
+            <img src="images/Cloud-5.svg" class="cloud cloud-5" alt="Cloud">
+        </div>
+
+        <div class="world">
+            <div class="road">
+                <img src="images/Road - Corner.svg" class="road-piece road-corner-back-left parallax" data-speed="0.1">
+                <img src="images/road-straight.svg" class="road-piece road-wall-left parallax" data-speed="0.2">
+                <img src="images/Road - Corner - No Shadow.svg" class="road-piece road-corner-front-left">
+                <img src="images/road-straight.svg" class="road-piece road-floor">
+                <img src="images/Road - Corner - No Shadow.svg" class="road-piece road-corner-front-right">
+                 <img src="images/road-straight.svg" class="road-piece road-wall-right parallax" data-speed="0.2">
+                <img src="images/Road - Corner.svg" class="road-piece road-corner-back-right parallax" data-speed="0.1">
+            </div>
+
+            <img src="images/tree.svg" class="tree-left" alt="Tree">
+            <img src="images/guitar.svg" class="guitar" alt="Guitar">
+
+            <div class="character-area">
+                <img src="images/me.png" alt="A pixelated version of Chris Lafay" class="me">
+                <div class="speech-bubble">
+                    <p>Hello, I'm Chris! Welcome to my portfolio.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div style="height: 2000px;"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

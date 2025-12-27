@@ -1,0 +1,305 @@
+body {
+    background-color: #68B3FF;
+    font-family: 'VT323', monospace;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: absolute;
+    width: calc(100% - 40px);
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-face {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-name {
+    width: 150px;
+}
+
+.header-subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.coin-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.coin-quantity {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.main-nav {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    z-index: 100;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav .nav-item a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.main-nav .nav-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.main-nav .nav-item.active a,
+.main-nav .nav-item a:hover {
+    color: #FFD700;
+}
+
+.main-nav .nav-item.active img,
+.main-nav .nav-item a:hover img {
+    filter: drop-shadow(0 0 5px #FFD700);
+}
+
+.main-nav .nav-item span {
+    display: none;
+    background: rgba(0,0,0,0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.main-nav .nav-item a:hover span {
+    display: inline-block;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.sky-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../images/sky-transparency.png') repeat-x;
+    background-size: cover;
+    z-index: 1;
+}
+
+.cloud {
+    position: absolute;
+    animation-name: moveClouds;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.cloud-1 {
+    width: 150px;
+    top: 10%;
+    left: -150px;
+    animation-duration: 40s;
+}
+
+.cloud-2 {
+    width: 200px;
+    top: 25%;
+    left: -200px;
+    animation-duration: 30s;
+    animation-delay: -5s;
+}
+
+.cloud-3 {
+    width: 120px;
+    top: 15%;
+    left: -120px;
+    animation-duration: 50s;
+    animation-delay: -15s;
+}
+
+.cloud-4 {
+    width: 250px;
+    top: 5%;
+    left: -250px;
+    animation-duration: 25s;
+    animation-delay: -10s;
+}
+
+.cloud-5 {
+    width: 180px;
+    top: 30%;
+    left: -180px;
+    animation-duration: 35s;
+    animation-delay: -20s;
+}
+
+@keyframes moveClouds {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(100vw + 300px));
+    }
+}
+
+.world {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50vh;
+}
+
+.road {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.road-piece {
+    height: 150px;
+}
+
+.road-corner-back-left {
+    transform: scaleX(-1);
+}
+
+.road-wall-left {
+    height: 150px;
+    width: 20%;
+}
+.road-wall-right {
+    height: 150px;
+    width: 20%;
+}
+
+.road-floor {
+    height: 150px;
+    width: 40%;
+}
+
+.road-corner-front-left {
+    transform: scaleY(-1);
+}
+
+.road-corner-front-right {
+    transform: scaleX(-1) scaleY(-1);
+}
+
+
+.tree-left {
+    position: absolute;
+    bottom: 140px;
+    left: 10%;
+    height: 150px;
+    z-index: 3;
+}
+
+.guitar {
+    position: absolute;
+    bottom: 140px;
+    right: 15%;
+    height: 100px;
+    z-index: 3;
+}
+
+
+.character-area {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    z-index: 5;
+}
+
+.me {
+    height: 200px;
+}
+
+.speech-bubble {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 20px;
+    position: relative;
+    box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+    border: 3px solid black;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-right-color: white;
+    border-left: 0;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+
+.speech-bubble p {
+    margin: 0;
+    font-size: 1.5rem;
+    color: black;
+}
