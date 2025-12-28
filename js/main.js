@@ -1,17 +1,18 @@
-document.addEventListener('scroll', function() {
-    const parallaxElements = document.querySelectorAll('.parallax');
-    let scrollPosition = window.pageYOffset;
+const applyParallax = () => {
+    const scrollPosition = window.pageYOffset || 0;
 
-    parallaxElements.forEach(function(element) {
-        let speed = element.dataset.speed;
-        let yPos = -(scrollPosition * speed);
-        element.style.transform = 'translateY(' + yPos + 'px)';
+    document.querySelectorAll('.parallax').forEach((element) => {
+        const speed = parseFloat(element.dataset.speed || '0');
+        const yPos = -(scrollPosition * speed);
+        element.style.setProperty('--parallax-offset', `${yPos}px`);
     });
 
-    const clouds = document.querySelectorAll('.cloud');
-    clouds.forEach(function(cloud, index) {
-        let speed = (index + 1) * 0.1;
-        let yPos = -(scrollPosition * speed);
-        cloud.style.transform = `translateY(${yPos}px)`;
+    document.querySelectorAll('.cloud').forEach((cloud, index) => {
+        const speed = (index + 1) * 0.05;
+        const yPos = -(scrollPosition * speed);
+        cloud.style.setProperty('--cloud-parallax', `${yPos}px`);
     });
-});
+};
+
+document.addEventListener('scroll', applyParallax);
+document.addEventListener('DOMContentLoaded', applyParallax);

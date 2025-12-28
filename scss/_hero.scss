@@ -1,0 +1,57 @@
+body {
+  background-color: #68B3FF;
+  padding:0;
+  margin:0;
+}
+.ccc-hero {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . .";
+  height:100vh;
+}
+
+.land {
+  background-color: #665034;
+  z-index:1;
+
+  &.main-left {
+      grid-row: 5 / 10;
+      grid-column: 1 / 3;
+  }
+  
+  &.main-right {
+      grid-row: 7 / 10;
+      grid-column: 11 / 13;
+  }
+  &.main-center {
+      grid-row: 8 / 10;
+      grid-column: 3 / 11;
+  }
+}
+
+.land-behind {
+  background-color:blue;
+  
+  &.background-left {
+    grid-row: 6 / 8;
+    grid-column: 3 / 5;
+  }
+  
+  &.background-right {
+    background-color: blue;
+    grid-row: 3 / 8;
+    grid-column: 9 / 13;
+    z-index:0;
+  }
+}
