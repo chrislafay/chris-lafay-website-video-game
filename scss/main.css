@@ -1,10 +1,10 @@
 body {
-  background-color: #68B3FF;
   padding: 0;
   margin: 0;
 }
 
 .ccc-hero {
+  background-color: #68B3FF;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -12,6 +12,25 @@ body {
   grid-auto-flow: row;
   grid-template-areas: ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . . . . . . . . . . .";
   height: 100vh;
+  background-image: url("../images/sky-transparency.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.land, .land-behind {
+  position: relative;
+}
+.land::before, .land-behind::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-image: url("../images/road-straight.svg");
+  background-repeat: repeat-x;
+  background-size: auto 20px;
+  z-index: 2;
 }
 
 .land {
@@ -31,16 +50,73 @@ body {
   grid-column: 3/11;
 }
 
+.walking-track {
+  grid-row: 6/8;
+  grid-column: 3/11;
+  position: relative;
+  z-index: 2;
+}
+.walking-track .person {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.walking-track .person img {
+  height: 200px;
+  display: block;
+}
+.walking-track .person .bubble {
+  position: absolute;
+  bottom: 210px; /* Above the image */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  background: white;
+  padding: 20px;
+  border: 3px solid black;
+  box-shadow: 5px 5px 0 0 black;
+  border-radius: 10px;
+  font-family: "VT323", monospace;
+  font-size: 1.5rem;
+  text-align: center;
+  color: black;
+}
+.walking-track .person .bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -23px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid black;
+}
+.walking-track .person .bubble::before {
+  content: "";
+  position: absolute;
+  bottom: -17px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 17px solid white;
+  z-index: 1;
+}
+
 .land-behind {
-  background-color: blue;
+  background-color: #46433e;
 }
 .land-behind.background-left {
   grid-row: 6/8;
   grid-column: 3/5;
 }
 .land-behind.background-right {
-  background-color: blue;
-  grid-row: 3/8;
+  grid-row: 4/8;
   grid-column: 9/13;
   z-index: 0;
 }/*# sourceMappingURL=main.css.map */
