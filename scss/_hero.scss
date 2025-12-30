@@ -6,6 +6,7 @@ body {
 
 .ccc-hero {
     --sky-color:#68B3FF;
+    --dirt-color:#665034;
     background-image: url(../images/sky-transparency.png);
     background-size:100% 100%;
     background-color: var(--sky-color);
@@ -31,14 +32,23 @@ body {
     }
 
     &__floor {
-        bottom:-20%;
+        bottom:0;
         position: absolute;
+        line-height: 0;
         left:0;
         width:100%;
         z-index: 1;
 
         img {
             height: auto;
+            width:100%;
+        }
+
+        &:after {
+            background-color: var(--dirt-color);
+            content:"";
+            display: block;
+            height:5rem;
             width:100%;
         }
     }
@@ -72,35 +82,35 @@ body {
 
 .cloud-1 {
     width: 150px;
-    top: 10%;
+    top: 5%;
     animation-duration: 40s;
     animation-delay: -10s;
 }
 
 .cloud-2 {
     width: 200px;
-    top: 25%;
+    top: 10%;
     animation-duration: 30s;
     animation-delay: -5s;
 }
 
 .cloud-3 {
     width: 120px;
-    top: 15%;
+    top: 20%;
     animation-duration: 50s;
     animation-delay: -15s;
 }
 
 .cloud-4 {
     width: 250px;
-    top: 5%;
+    top: 30%;
     animation-duration: 25s;
     animation-delay: -20s;
 }
 
 .cloud-5 {
     width: 180px;
-    top: 30%;
+    top: 40%;
     animation-duration: 35s;
     animation-delay: 0s;
 }
